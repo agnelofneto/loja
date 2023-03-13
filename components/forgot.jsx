@@ -18,7 +18,7 @@ const Forgot = () => {
         </Heading>
 
         <Input
-          placeholder="yorur email..."
+          placeholder="your email..."
           borderColor="blue.400"
           _hover={{ borderColor: "blue.300" }}
           _focus={{ borderColor: "blue.700" }}

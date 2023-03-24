@@ -1,53 +1,68 @@
-import { Flex, Spacer, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { FaSearch } from "react-icons/fa";
-import framerMotion from "framer-motion"; // Importar via exportação padrão
+import { ReactNode } from 'react';
+import {
+	Box,
+	Flex,
+	HStack,
+	Link,
+	IconButton,
+	useDisclosure,
+	useColorModeValue,
+	Stack,
+} from '@chakra-ui/react';
 
-const { motion, useIsPresent } = framerMotion;
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const Navbar = () => {
-  return (
-    <Flex align="center" justify="space-between" py={4} bg="gray.200" mx="auto" maxW="100%">
-      <Spacer />
-      <InputGroup w="50%" ml={4} justifyContent="center">
-        <InputLeftElement
-          pointerEvents="none"
-          children={<FaSearch color="gray.300" />}
-        />
-        <Input type="text" placeholder="Pesquisar" />
-      </InputGroup>
-      
-      <motion.ul
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        style={{ listStyleType: "none", display: "flex", flexDirection: "row" }}
-      >
-        <motion.li
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          style={{ marginRight: "10px" }}
-        >
-          <a href="#">Link 1</a>
-        </motion.li>
-        <motion.li
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          style={{ marginRight: "10px" }}
-        >
-          <a href="#">Link 2</a>
-        </motion.li>
-        <motion.li
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <a href="#">Link 3</a>
-        </motion.li>
-      </motion.ul>
-    </Flex>
-  );
-};
+const Links = ['Dashboard', 'Projects', 'Team'];
 
-export default Navbar;
+const Navbar = ({ children }) => (
+	<Link
+		px={2}
+		py={1}
+		rounded={'md'}
+		_hover={{
+			textDecoration: 'none',
+			bg: useColorModeValue('gray.200', 'gray.700'),
+		}}
+		href={'#'}
+	>
+		{children}
+	</Link>
+);
+
+export function Simple() {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+
+	return (
+		<>
+			<Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+				<Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+					<IconButton
+						size={'md'}
+						icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+						aria-label={'Open Menu'}
+						display={{ md: 'none' }}
+						onClick={isOpen ? onClose : onOpen}
+					/>
+					<HStack spacing={8} alignItems={'center'}>
+						<Box>Logo</Box>
+						<HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
+							{Links.map((link) => (
+								<Navbar key={link}>{link}</Navbar>
+							))}
+						</HStack>
+					</HStack>
+				</Flex>
+
+				{isOpen ? (
+					<Box pb={4} display={{ md: 'none' }}>
+						<Stack spacing={4}>
+							{Links.map((link) => (
+								<Navbar key={link}>{link}</Navbar>
+							))}
+						</Stack>
+					</Box>
+				) : null}
+			</Box>
+		</>
+	);
+}

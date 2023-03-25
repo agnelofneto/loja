@@ -28,13 +28,10 @@ export default Home;
 
 */
 
-
-import { Navbar } from './Navbar';
+import { Navbar } from "../components/navbar";
 
 const Home = () => {
-  return (
-    <Navbar/>
-  );
+  return <Navbar />;
 };
 
 export default Home;

@@ -29,9 +29,20 @@ export default Home;
 */
 
 import { Navbar } from "../components/navbar";
+import Carousel from "../components/Carousel";
+
+
+
+
+
 
 const Home = () => {
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <Carousel />
+    </>
+  );
 };
 
 export default Home;

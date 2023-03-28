@@ -19,20 +19,27 @@ import logo from "../assets/agnelo.png";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
+// Este componente envolve um link do ChakraUI para estilizá-lo com alguns estilos pré-definidos
 const LinkWrapper = ({ children }) => (
   <ChakraLink
+    // Define o espaçamento horizontal do link
     px={2}
+    // Define o espaçamento vertical do link
     py={1}
+    // Define o arredondamento dos cantos do link
     rounded={"md"}
+    // Define o estilo do link quando o mouse está sobre ele
     _hover={{
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
+    // Define o destino do link
     href={"#"}
   >
     {children}
   </ChakraLink>
 );
+
 
 export function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,7 +62,7 @@ export function Navbar() {
 
           <NextLink href="/login">
             <Box>
-              <Button bg="blue.400" color="white">
+              <Button bg="blue.500" color="white">
                 Login
               </Button>
             </Box>
@@ -81,7 +88,7 @@ export function Navbar() {
           </Box>
           <Box>
             <NextLink href="/login">
-              <Button bg="blue.400" color="white">
+              <Button bg="blue" color="white">
                 Login
               </Button>
             </NextLink>

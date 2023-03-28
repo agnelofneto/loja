@@ -38,12 +38,12 @@ const Login = () => {
           type={"password"}
         />
 
-        <Button colorScheme="blue" variant={"solid"} mb={3}>
+        <Button bg="blue.500" color="white" variant={"solid"} mb={3}>
           Sign in
         </Button>
 
         <Link href="/createAccount">
-          <Button colorScheme="blue" variant={"solid"} width={"100%"} mb={3} >
+          <Button bg="blue.500" color="white"  variant={"solid"} width={"100%"} mb={3} >
             Create an account
           </Button>
         </Link>

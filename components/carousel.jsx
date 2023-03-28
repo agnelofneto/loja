@@ -71,18 +71,23 @@ export default function Carousel() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}
+      >
         <BiRightArrowAlt size="40px" />
       </IconButton>
 
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {captions.map((item, index) => { return(
-          <Box key={index}>
-            <img src={item.image} alt={item.title} width="100%" height="600px" />
-            <Box position="absolute" bottom={0} left={0} width="100%" p={4} bg="rgba(0, 0, 0, 0.7)">
-              <Heading fontSize="2xl" mb={2} color="white">{item.title}</Heading>
+        {captions.map((item, index) => {
+          return (
+            <Box key={index}>
+              <img src={item.image} alt={item.title} width="100%" height="600px" />
+              <Box position="absolute" bottom={0} left={0} width="100%" p={4} bg="rgba(0, 0, 0, 0.7)">
+                <Heading fontSize="2xl" mb={2} color="white">{item.title}</Heading>
+                <Text fontSize="md" color="white">{item.text}</Text>
+              </Box>
             </Box>
           );
+          
         })}
       </Slider>
     </Box>

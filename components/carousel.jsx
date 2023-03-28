@@ -62,11 +62,12 @@ export default function Carousel() {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}>q
         <BiRightArrowAlt size="40px" />
       </IconButton>
 
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
+        console.log(caption)
         {captions.map((item, index) => { return(
           <Box key={index}>
             <img src={item.image} alt={item.title} width="100%" height="600px" />

@@ -77,17 +77,31 @@ export default function Carousel() {
       </IconButton>
 
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {captions.map((item, index) => {
+        {carousel.map((item, index) => {
           return (
             <Box key={index}>
-              <img src={item.image} alt={item.title} width="100%" height="600px" />
-              <Box position="absolute" bottom={0} left={0} width="100%" p={4} bg="rgba(0, 0, 0, 0.7)">
-                <Heading fontSize="2xl" mb={2} color="white">{item.title}</Heading>
-                <Text fontSize="md" color="white">{item.text}</Text>
+              <img src={item.image} alt={item.title} style={{ width: "100%", height: "auto" }} />
+              <Box
+                position="absolute"
+                bottom={0}
+                left={0}
+                width="100%"
+                p={4}
+                bg="rgba(0, 0, 0, 0.7)"
+                zIndex={1}
+              >
+                <Heading
+                  fontSize="2xl"
+                  mb={2}
+                  color="white"
+                  style={{ marginBottom: "15px" }}
+                >
+                  {item.title}
+                </Heading>
+
               </Box>
             </Box>
           );
-          
         })}
       </Slider>
     </Box>

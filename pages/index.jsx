@@ -26,7 +26,7 @@ const Home = () => {
 
 export default Home;
 
-*/
+
 
 import { Navbar } from "./../components/navbar";
 import Carousel from "./../components/carousel";
@@ -41,3 +41,21 @@ const Home = () => {
 };
 
 export default Home;
+
+*/
+
+import { Navbar } from "./../components/navbar";
+import Carousel from "./../components/carousel";
+
+const Home = () => {
+  return (
+    <>
+      <Navbar />
+      <Carousel />
+    </>
+  );
+};
+
+export default Home;
+
+

@@ -1,61 +1,20 @@
-/* 
-import Login from '@/components/login';
-
-const Home = () => {
-  return (
-   <Login />
-  );
-};
-
-export default Home;
-
-
-
-import Main from '@/components/main';
-import Navbar from '@/components/navbar';
-
-const Home = () => {
-  return (
-    <>
-      <Navbar />
-      <Main />
-      
-    </>
-  );
-};
-
-export default Home;
-
-
-
 import { Navbar } from "./../components/navbar";
 import Carousel from "./../components/carousel";
+import Main from "@/components/main";
+import Footer from "@/components/footer";
+import Content from "@/components/content";
 
-const Home = () => {
-  return (
-    <>
-      <Navbar />
-      *<Carousel />
-    </>
-  );
-};
-
-export default Home;
-
-*/
-
-import { Navbar } from "./../components/navbar";
-import Carousel from "./../components/carousel";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Carousel />
+      <Content mb={3}  />
+      <Main />
+      <Footer />
     </>
   );
 };
 
 export default Home;
-
-

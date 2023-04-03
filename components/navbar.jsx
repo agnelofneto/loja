@@ -17,7 +17,7 @@ import Image from "next/image";
 
 import logo from "../assets/agnelo.png";
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = ["Man", "Woman", "Woman", "Sport" ,"Brand" , "Accessories" ];
 
 // Este componente envolve um link do ChakraUI para estilizá-lo com alguns estilos pré-definidos
 const LinkWrapper = ({ children }) => (
@@ -58,11 +58,14 @@ export function Navbar() {
             <LinkWrapper>{Links[0]}</LinkWrapper>
             <LinkWrapper>{Links[1]}</LinkWrapper>
             <LinkWrapper>{Links[2]}</LinkWrapper>
+            <LinkWrapper>{Links[3]}</LinkWrapper>
+            <LinkWrapper>{Links[4]}</LinkWrapper>
+            <LinkWrapper>{Links[5]}</LinkWrapper>
           </HStack>
 
           <NextLink href="/login">
             <Box>
-              <Button bg="blue.500" color="white">
+              <Button bg="green.500" color="white">
                 Login
               </Button>
             </Box>
@@ -88,7 +91,7 @@ export function Navbar() {
           </Box>
           <Box>
             <NextLink href="/login">
-              <Button bg="blue" color="white">
+              <Button bg="green.500" color="white">
                 Login
               </Button>
             </NextLink>
@@ -101,6 +104,9 @@ export function Navbar() {
               <LinkWrapper>{Links[0]}</LinkWrapper>
               <LinkWrapper>{Links[1]}</LinkWrapper>
               <LinkWrapper>{Links[2]}</LinkWrapper>
+              <LinkWrapper>{Links[3]}</LinkWrapper>
+              <LinkWrapper>{Links[4]}</LinkWrapper>
+              <LinkWrapper>{Links[5]}</LinkWrapper>
             </Stack>
           </Box>
         ) : null}

@@ -1,9 +1,9 @@
-import MyCarousel from '@/components/carousel';
+import Carousel from '@/components/carousel';
 import React from 'react';
 
 const CarouselPage = () => {
   return (
-    <MyCarousel />
+    <Carousel />
   );
 };
 

@@ -23,27 +23,27 @@ const Login = () => {
 
         <Input
           placeholder="yorur email..."
-          borderColor="blue.400"
-          _hover={{ borderColor: "blue.300" }}
-          _focus={{ borderColor: "blue.700" }}
+          borderColor="green.400"
+          _hover={{ borderColor: "green.300" }}
+          _focus={{ borderColor: "grenn.700" }}
           mb={3}
           type={"email"}
         />
         <Input
           placeholder="******"
-          borderColor="blue.400"
-          _hover={{ borderColor: "blue.300" }}
-          _focus={{ borderColor: "blue.700" }}
+          borderColor="green.400"
+          _hover={{ borderColor: "green.300" }}
+          _focus={{ borderColor: "green.700" }}
           mb={6}
           type={"password"}
         />
 
-        <Button bg="blue.500" color="white" variant={"solid"} mb={3}>
+        <Button bg="green.500" color="white" variant={"solid"} mb={3}>
           Sign in
         </Button>
 
         <Link href="/createAccount">
-          <Button bg="blue.500" color="white"  variant={"solid"} width={"100%"} mb={3} >
+          <Button bg="green.500" color="white"  variant={"solid"} width={"100%"} mb={3} >
             Create an account
           </Button>
         </Link>

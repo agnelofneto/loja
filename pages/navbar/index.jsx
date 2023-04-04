@@ -1,13 +1,14 @@
-import Login from '@/components/login'
-import Navbar  from '@/components/Navbar'
+import React from 'react';
+import Navbar from '@/components/navbar';
 
-const LoginPage = () => {
+
+const NavbarPage = () => {
   return (
     <>
       <Navbar />
-      <Login />
+    
     </>
   )
 }
 
-export default LoginPage
+export default NavbarPage;

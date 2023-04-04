@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <Navbar />
       <Carousel />
-      <Content mb={3}  />
+      <Content />
       <Main />
       <Footer />
     </>
